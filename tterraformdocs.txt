@@ -1,0 +1,45 @@
+
+
+//search spotify playlist on terraform registry where you can search spotify and then resources
+//provider.tf
+//if you want to create a playlist on spotify you need a api key and similiar to while creating resoucees on aws you take access key and secret key
+//create an app on spotify dashboard
+//you need spotify client id and spotify client secret key
+//i am connecting my spotify with terraform using secret id and secret id so we can create playlist on spotify
+//next time when u are creating playlist go with this-> Spotify for Developers
+docker run --rm -it -p 27228:27228 --env-file .env ghcr.io/conradludgate/spotify-auth-proxy
+dont stop this container after running open a new terminal
+terraform {
+  required_providers {
+    spotify = {
+      source = "conradludgate/spotify"
+      version = "0.2.7"
+    }
+  }
+}
+
+provider "spotify" {
+  # Configuration options
+}
+
+
+https://open.spotify.com/track/6lanRgr6wXibZr8KgzXxBl?si=80a988e56ec34d34
+6lanRgr6wXibZr8KgzXxBl  this is the id of the sng just paste in playlist.tf in tracks variable
+https://open.spotify.com/track/6lanRgr6wXibZr8KgzXxBl?si=76ce1925baca4ae2
+https://open.spotify.com/track/4VsP4Dm8gsibRxB5I2hEkw?si=4e43f97d7aec48e1
+4VsP4Dm8gsibRxB5I2hEkw
+https://open.spotify.com/track/0vqtlDkv6BamM6PIKM9ptz?si=37dfd199b8c54ead
+
+terraform init
+terraform plan
+terraform apply -auto-approve
+
+
+
+
+
+create app in spotify playlist dashboad then just configure secret key and client in code then update 
+spotify api key in terraform.tfvars and execute provider.tf using this command 
+docker run --rm -it -p 27228:27228 --env-file .env ghcr.io/conradludgate/spotify-auth-proxy
+
+then open a new terminal and just give all terraform  command one by one 
