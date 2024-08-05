@@ -1,4 +1,4 @@
-
+Created spotify playlist using Iac tools Terraform
 
 //search spotify playlist on terraform registry where you can search spotify and then resources
 //provider.tf
